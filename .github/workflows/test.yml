@@ -1,0 +1,9 @@
+name: Test Reusable
+on:
+  pull_request:
+    types: [opened, reopened]
+jobs:
+  test:
+    uses: nizar-test/droid-workflows/.github/workflows/simple-test.yml@main
+    secrets:
+      factory_api_key: ${{ secrets.FACTORY_API_KEY }}
